@@ -1,0 +1,11 @@
+{
+  "name": "default",
+  "type": "mongodb",
+  "host": "localhost",
+  "port": 27017,
+  "database": "quakelogparser",
+  "useUnifiedTopology": true,
+  "entities": [
+    "./src/database/entities/*.ts"
+  ]
+}
