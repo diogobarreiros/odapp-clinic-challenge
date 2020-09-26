@@ -18,7 +18,7 @@ class PacientesRepository implements IPacientesRepository {
     return paciente;
   }
 
-  public async findByName(nome: string): Promise<Paciente | undefined> {
+  public async findByNome(nome: string): Promise<Paciente | undefined> {
     const paciente = await this.ormRepository.findOne({
       where: { nome },
     });
