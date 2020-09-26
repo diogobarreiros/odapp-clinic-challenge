@@ -6,6 +6,7 @@ import IPacientesRepository from '../database/repositories/interfaces/IPacientes
 import Paciente from '../database/entities/Paciente';
 
 interface IRequest {
+  paciente_id: string;
   nome: string;
   idade: number;
   cidade: string;
@@ -13,33 +14,32 @@ interface IRequest {
 }
 
 @injectable()
-class CreatePacienteService {
+class UpdatePacienteService {
   constructor(
     @inject('PacientesRepository')
     private pacientesRepository: IPacientesRepository,
   ) {}
 
   public async execute({
+    paciente_id,
     nome,
     idade,
     cidade,
     estado,
   }: IRequest): Promise<Paciente> {
-    const checkPacienteExists = await this.pacientesRepository.findByNome(nome);
+    const paciente = await this.pacientesRepository.findById(paciente_id);
 
-    if (checkPacienteExists) {
-      throw new AppError('Este paciente já existe.');
+    if (!paciente) {
+      throw new AppError('Este paciente não existe.');
     }
 
-    const paciente = await this.pacientesRepository.create({
-      nome,
-      idade,
-      cidade,
-      estado,
-    });
+    paciente.nome = nome;
+    paciente.idade = idade;
+    paciente.cidade = cidade;
+    paciente.estado = estado;
 
-    return paciente;
+    return this.pacientesRepository.save(paciente);
   }
 }
 
-export default CreatePacienteService;
+export default UpdatePacienteService;

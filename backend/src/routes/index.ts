@@ -23,4 +23,17 @@ routes.post(
   pacienteController.create,
 );
 
+routes.put(
+  '/paciente/:id',
+  celebrate({
+    [Segments.BODY]: {
+      nome: Joi.string().required(),
+      idade: Joi.number().required(),
+      cidade: Joi.string().required(),
+      estado: Joi.string().required(),
+    },
+  }),
+  pacienteController.update,
+);
+
 export default routes;
