@@ -6,4 +6,5 @@ export default interface IPacientesRepository {
   findByNome(nome: string): Promise<Paciente | undefined>;
   create(data: ICreatePacienteDTO): Promise<Paciente>;
   save(paciente: Paciente): Promise<Paciente>;
+  delete(id: string): Promise<number | null | undefined>;
 }

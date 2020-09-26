@@ -37,6 +37,12 @@ class PacientesRepository implements IPacientesRepository {
   public async save(paciente: Paciente): Promise<Paciente> {
     return this.ormRepository.save(paciente);
   }
+
+  public async delete(id: string): Promise<number | null | undefined> {
+    const deleteResult = await this.ormRepository.delete(id);
+
+    return deleteResult.affected;
+  }
 }
 
 export default PacientesRepository;

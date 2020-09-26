@@ -36,4 +36,6 @@ routes.put(
   pacienteController.update,
 );
 
+routes.delete('/paciente/:id', pacienteController.delete);
+
 export default routes;

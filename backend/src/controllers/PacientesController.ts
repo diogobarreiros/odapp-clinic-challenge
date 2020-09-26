@@ -4,6 +4,7 @@ import { classToClass } from 'class-transformer';
 
 import CreatePacienteService from '../services/CreatePacienteService';
 import UpdatePacienteService from '../services/UpdatePacienteService';
+import DeletePacienteService from '../services/DeletePacienteService';
 
 export default class PacientesController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -36,5 +37,17 @@ export default class PacientesController {
     });
 
     return response.json(classToClass(paciente));
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const paciente_id = request.params.id;
+
+    const deletePaciente = container.resolve(DeletePacienteService);
+
+    const deleteResult = await deletePaciente.execute({
+      paciente_id,
+    });
+
+    return response.json(deleteResult);
   }
 }
