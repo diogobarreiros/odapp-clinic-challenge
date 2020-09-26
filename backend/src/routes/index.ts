@@ -38,4 +38,6 @@ routes.put(
 
 routes.delete('/paciente/:id', pacienteController.delete);
 
+routes.get('/pacientes', pacienteController.index);
+
 export default routes;

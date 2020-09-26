@@ -43,6 +43,10 @@ class PacientesRepository implements IPacientesRepository {
 
     return deleteResult.affected;
   }
+
+  public async findAll(): Promise<Paciente[]> {
+    return this.ormRepository.find();
+  }
 }
 
 export default PacientesRepository;
