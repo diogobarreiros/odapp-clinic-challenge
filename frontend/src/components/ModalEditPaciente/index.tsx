@@ -43,7 +43,7 @@ const ModalEditPaciente: React.FC<IModalProps> = ({
         <h1>Editar Paciente</h1>
         <Input name="nome" placeholder="Insira seu nome" />
         <Input name="cidade" placeholder="Insira a sua cidade" />
-        <Input name="estado" placeholder="Insira a seu estado" />
+        <Input name="estado" placeholder="Insira seu estado" />
         <Input name="idade" placeholder="Insira a sua idade" />
         <button type="submit" data-testid="edit-paciente-button">
           <div className="text">Editar Paciente</div>

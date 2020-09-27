@@ -49,7 +49,7 @@ const Paciente: React.FC<IProps> = ({
             type="button"
             className="icon"
             onClick={() => setEditingPaciente()}
-            data-testid={`edit-paciente-${paciente.id}`}
+            data-testid={`edit-paciente-${paciente.nome}`}
           >
             <FiEdit3 size={20} />
           </button>
@@ -58,7 +58,7 @@ const Paciente: React.FC<IProps> = ({
             type="button"
             className="icon"
             onClick={() => handleDelete(paciente.id)}
-            data-testid={`remove-paciente-${paciente.id}`}
+            data-testid={`remove-paciente-${paciente.nome}`}
           >
             <FiTrash size={20} />
           </button>

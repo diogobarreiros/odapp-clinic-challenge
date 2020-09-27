@@ -41,7 +41,7 @@ const ModalAddPaciente: React.FC<IModalProps> = ({
         <h1>Novo Paciente</h1>
         <Input name="nome" placeholder="Insira seu nome" />
         <Input name="cidade" placeholder="Insira a sua cidade" />
-        <Input name="estado" placeholder="Insira a seu estado" />
+        <Input name="estado" placeholder="Insira seu estado" />
         <Input name="idade" placeholder="Insira a sua idade" />
         <button type="submit" data-testid="add-paciente-button">
           <p className="text">Adicionar Paciente</p>
