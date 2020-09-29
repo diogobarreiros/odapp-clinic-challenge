@@ -44,10 +44,10 @@ Desafio de criar um sistema simples que auxilie as pessoas a localizarem dados d
     <img alt="Web" src="gifs/Web_OdApp.gif" width="900px">
 </h1>
 
-## :mobile: Resultado no Mobile
+## :iphone: Resultado no Mobile
 
 <h1 align="center">
-    <img alt="Web" src="gifs/Mobile_OdApp.gif" width="900px">
+    <img alt="Web" src="gifs/Mobile_OdApp.gif" height="500px">
 </h1>
 
 <a id="como-usar"></a>
