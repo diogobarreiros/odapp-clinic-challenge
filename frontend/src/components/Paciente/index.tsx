@@ -32,15 +32,13 @@ const Paciente: React.FC<IProps> = ({
       <section className="body">
         <h3>Paciente</h3>
         <h2>{paciente.nome}</h2>
+        <h3>Cidade</h3>
         <p>
-          <h3>Cidade</h3>
           {paciente.cidade} - {paciente.estado}
         </p>
-        <p>
-          <h3>Idade</h3>
-          <p className="age">
-            <b>{paciente.idade} anos</b>
-          </p>
+        <h3>Idade</h3>
+        <p className="age">
+          <b>{paciente.idade} anos</b>
         </p>
       </section>
       <section className="footer">

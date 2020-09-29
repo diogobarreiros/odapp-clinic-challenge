@@ -92,9 +92,9 @@ const Dashboard: React.FC = () => {
 
       <PacientesContainer data-testid="pacientes-list">
         {pacientes &&
-          pacientes.map(paciente => (
+          pacientes.map((paciente, index) => (
             <Paciente
-              key={paciente.id}
+              key={index}
               paciente={paciente}
               handleDelete={handleDeletePaciente}
               handleEditPaciente={handleEditPaciente}

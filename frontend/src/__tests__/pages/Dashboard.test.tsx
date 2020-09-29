@@ -82,7 +82,7 @@ describe('Dashboard', () => {
     expect(inputIdade.value).toBe('35');
 
     apiMock.onPost('paciente').reply(200, {
-      id: '5f70d855dc5bb9244c3ba746',
+      id: '4',
       nome: 'Diogo',
       idade: 35,
       cidade: 'Ribeirão Preto',
@@ -105,7 +105,7 @@ describe('Dashboard', () => {
   it('should be able to edit a paciente', async () => {
     apiMock.onGet('pacientes').reply(200, [
       {
-        id: '5f70d855dc5bb9244c3ba746',
+        id: '5',
         nome: 'Diogo',
         idade: 35,
         cidade: 'Ribeirão Preto',
@@ -146,7 +146,7 @@ describe('Dashboard', () => {
     expect(inputEstado.value).toBe('SP');
     expect(inputIdade.value).toBe('35');
 
-    apiMock.onPut('paciente/5f70d855dc5bb9244c3ba746').reply(200, {
+    apiMock.onPut('paciente/5').reply(200, {
       nome: 'Diogo',
       idade: 35,
       cidade: 'Ribeirão Preto',
@@ -169,7 +169,7 @@ describe('Dashboard', () => {
   it('should be able to remove a paciente', async () => {
     apiMock.onGet('pacientes').reply(200, [
       {
-        id: '5f70d855dc5bb9244c3ba746',
+        id: '6',
         nome: 'Diogo',
         idade: 35,
         cidade: 'Ribeirão Preto',
@@ -177,7 +177,7 @@ describe('Dashboard', () => {
       },
     ]);
 
-    apiMock.onDelete('paciente/5f70d855dc5bb9244c3ba746').reply(204);
+    apiMock.onDelete('paciente/6').reply(204);
 
     const { getByText, getByTestId } = render(<Dashboard />);
 

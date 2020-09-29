@@ -5,7 +5,7 @@ export const Container = styled.div`
   border-radius: 8px;
 
   section.body {
-    padding: 30px;
+    padding: 20px;
 
     h2 {
       color: #3d3d4d;
@@ -13,12 +13,14 @@ export const Container = styled.div`
 
     h3 {
       color: #a9a9a9;
+
+      margin-top: 16px;
     }
 
     p {
       color: #3d3d4d;
 
-      margin-top: 16px;
+      margin-inline-end: 16px;
     }
 
     .age {
